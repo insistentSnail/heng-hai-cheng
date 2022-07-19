@@ -110,7 +110,7 @@ const buildData = [
     ],
     jfData: [
       {
-        price: '10'
+        price: '110'
       }
     ]
   },
@@ -202,7 +202,7 @@ const buildData = [
     ],
     jfData: [
       {
-        price: '0'
+        price: '100'
       }
     ]
   },
@@ -409,7 +409,7 @@ const buildData = [
     ],
     jfData: [
       {
-        price: '10'
+        price: '110'
       }
     ]
   },
@@ -915,7 +915,7 @@ const buildData = [
     ],
     jfData: [
       {
-        price: '10'
+        price: '110'
       }
     ]
   },
@@ -1145,7 +1145,7 @@ const buildData = [
     ],
     jfData: [
       {
-        price: '10'
+        price: '110'
       }
     ]
   },
@@ -1513,7 +1513,7 @@ const buildData = [
     ],
     jfData: [
       {
-        price: '10'
+        price: '110'
       }
     ]
   },
@@ -2577,11 +2577,17 @@ const buildData = [
   }
 ]
 
+const allPrice = buildData.reduce(
+  (pre, ele) => pre + Number(ele.jfData[0].price),
+  0
+)
+
 var obj = {
   buildData,
-  allPrice: 1660,
-  cost: 202,
-  resetPrice: 1458
+  // allPrice: 2260,
+  allPrice,
+  cost: 950,
+  resetPrice: 1310
 }
 
 export { obj }

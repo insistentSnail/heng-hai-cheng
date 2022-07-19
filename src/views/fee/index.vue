@@ -5,7 +5,7 @@
         <div class="card-header">
           <div>
             <span>费用明细</span>&nbsp;&nbsp;&nbsp;
-            <span>总收入：XXX元</span>&nbsp;&nbsp;&nbsp;
+            <span>总收入：{{ allPrice }}元</span>&nbsp;&nbsp;&nbsp;
             <span>总支出：{{ allOutFee }}元</span>
           </div>
 
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { computed } from 'vue'
 export default {
   name: '',
@@ -75,6 +75,11 @@ export default {
         origin: '被抓业主补贴',
         price: '200',
         pic: require('@/assets/fee/img6.jpg')
+      },
+      {
+        origin: '打印资料、业主代表跑腿等',
+        price: '100',
+        pic: require('@/assets/fee/img7.jpg')
       }
     ]
 
@@ -89,6 +94,11 @@ export default {
     })
 
     const router = useRouter()
+
+    const route = useRoute()
+
+    const allPrice = route.params.allPrice
+
     const back = () => {
       router.back()
     }
@@ -96,7 +106,8 @@ export default {
       back,
       feeData,
       allOutFee,
-      srcList
+      srcList,
+      allPrice
     }
   }
 }

@@ -144,7 +144,12 @@ export default {
 
     const router = useRouter()
     const routerToFee = () => {
-      router.push({ name: 'Fee' })
+      router.push({
+        name: 'Fee',
+        params: {
+          allPrice: Data.value.allPrice
+        }
+      })
     }
 
     return {
